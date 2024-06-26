@@ -20,6 +20,10 @@ Data are found in
 ```
 folder. There are mainly pkl files containing info on the problem setting: graph, nodes, arches; and info on objects and trays.
 
+#### Files
+
+Data are uploaded in all files where needed. Main source files are ExactDP.py, MR.py and MCTS.py.
+
 ## Aknowledgement
 This work has been partially funded by the European Union’s Horizon 2020 research and innovation programme, under grant agreement No 101017274.
 See https://darko-project.eu/about/ for more information about the DARKO project.
