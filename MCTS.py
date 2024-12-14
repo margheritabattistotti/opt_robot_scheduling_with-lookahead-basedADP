@@ -4,7 +4,9 @@ import timeit
 import time
 from numpy import infty
 import mcTree as MT
-import MR as MR
+### Import the only one that you want to use and make sure it is the same on mcTree.py
+# import MRstd as MR
+import MRmanyOrders as MR
 
 
 def throwing_success(c0, c1):
@@ -89,7 +91,8 @@ def forward_pass(initial_s):
             if check_full_tray[t] == MR.obj4trays_dict[MR.trays[t]]:
                 if cnt[t] == 0:
                     action_sequence.append(MR.trays[t] + ' ' + 'is full!')
-                    completion_rank[MR.all_orders.index(MR.tray_has_order[MR.trays[t]])] = str(s.state[0]) + 's'
+                    # completion_rank[MR.all_orders.index(MR.tray_has_order[MR.trays[t]])] = str(s.state[0]) + 's'  # when using standard MRstd
+                    completion_rank[MR.tray_has_order[MR.trays[t]][1]] = str(s.state[0]) + 's'  # when using MRmanyOrders
                     cnt[t] = 1
                 orders_queue = [order for order in MR.orders_list if order[1] < s.state[0]]
                 orders_queue = MR.UpdatePriorities(orders_queue, s.state[0])
@@ -168,6 +171,7 @@ for iters in range(15):
 
     # Resetting initial mission and orders for the next iteration
     MR.orders_list = MR.all_orders.copy()
+    MR.all_orders_get_idx = MR.all_orders.copy()  # when using MRmanyOrders
     MR.set_mission(initial=2)
 
     # print(f"Time taken is {end - start}s")
