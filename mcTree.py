@@ -1,6 +1,8 @@
 import random
 import numpy as np
-import MR as MR
+### Import the only one that you want to use and make sure it is the same on MCTS.py
+# import MRstd as MR
+import MRmanyOrders as MR
 
 
 # ###################################### PRE DECISION STATE TREE NODE CLASS ####################################### #
@@ -304,3 +306,4 @@ class MTCSPostDecisionNode:
                 probs[1] = 1
 
         return probs
+        
