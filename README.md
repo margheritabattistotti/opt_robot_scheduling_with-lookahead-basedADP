@@ -20,9 +20,19 @@ Data are found in
 ```
 folder. There are mainly pkl files containing info on the problem setting: graph, nodes, arches; and info on objects and trays.
 
+Values of Thorizon, maxPortableObjs, tpick, tthrow, Twait, etc., are set by the user and depend on the setting (number and characteristics of orders and robot's capabilities).
+
 #### Files
 
-Data are uploaded in all files where needed. Main source files are ExactDP.py, MR.py and MCTS.py.
+Data are uploaded in all files where needed. Main source files are ExactDP.py, MR.py and MCTS.py, MRmanyOrders.py, Heuristic.py.
+MRmanyOrders is a MR adjusted to deal with more orders. Heuristic is a sequential heuristic created to assess solution quality through comparison.
+
+#### Hyperparameters
+
+There are hyperparameters one needs to tune if data change (and in general, given they were manually chosen):
+ExactDP.py: rewards, discount_factor;
+MR.py, MCTS.py, MRmanyOrders.py: rewards, fail_rewards, gamma, M;
+mcTree: self.simulations, self.max_actions, self.eps.
 
 ## Aknowledgement
 This work has been partially funded by the European Union’s Horizon 2020 research and innovation programme, under grant agreement No 101017274.
