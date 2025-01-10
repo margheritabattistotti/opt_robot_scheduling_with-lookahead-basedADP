@@ -125,7 +125,7 @@ def set_mission(initial=1, tray_index=None, new_order=None, entering_time=None):
             arrival_time += arrival_gap
             all_arrival_times.append(arrival_time)
             orders_list[order] = [orders_list[order], arrival_time, priority_list[order]]
-            arrival_time += len(orders_list)/Thorizon  # ????
+            arrival_time += len(orders_list)/Thorizon
 
     elif initial == 1:
         # Create initial mission
@@ -148,7 +148,7 @@ def set_mission(initial=1, tray_index=None, new_order=None, entering_time=None):
         tot_obj4mission = tot_objects4mission()
         # Appending of arrival times and priorities
         events = len(orders_list)
-        lambda_ = events / Thorizon  # 1 / 150  # Expected value: one arrival every 75 seconds
+        lambda_ = events / Thorizon  # 1 / 150  # Expected value: one arrival every 150 seconds
         arrival_times = Poiss.PoissonProcess_simulation(lambda_, events)
         all_arrival_times = np.concatenate((np.zeros((T,)), arrival_times))
         priorities = [1, 2]
