@@ -30,6 +30,7 @@ MRmanyOrders is a MR adjusted to deal with more orders. Heuristic is a sequentia
 #### Hyperparameters
 
 There are hyperparameters one needs to tune if data change (and in general, given they were manually chosen):
+
 ExactDP.py: rewards, discount_factor;
 MR.py, MCTS.py, MRmanyOrders.py: rewards, fail_rewards, gamma, M;
 mcTree: self.simulations, self.max_actions, self.eps.
