@@ -1,4 +1,5 @@
 # Scheduling autonomous robots for an intralogistic application: A comparison of lookahead-based ADP strategies
+#### DOI: https://doi.org/10.1016/j.eswa.2025.126590
 
 ## Brief description
 #### The problem and the objective 
